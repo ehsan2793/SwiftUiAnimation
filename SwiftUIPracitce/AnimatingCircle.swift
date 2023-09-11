@@ -21,9 +21,9 @@ struct AnimatingCircle: View {
 
     var body: some View {
         ZStack {
-//            Rectangle()
-//                .foregroundColor(.white)
-//                .edgesIgnoringSafeArea(.all)
+            Rectangle()
+                .foregroundColor(.white)
+                .edgesIgnoringSafeArea(.all)
             ZStack {
                 Circle().fill(LinearGradient(gradient: Gradient(colors: [outerColor, innerColor]), startPoint: .top, endPoint: .bottom))
                     .frame(width: 120, height: 120)
@@ -34,6 +34,8 @@ struct AnimatingCircle: View {
                     .offset(y: moveInOut ? 60 : 0)
             } //: ZSTACK
             .opacity(0.5)
+            .rotationEffect(.degrees(rotateInOut ? 120 : 0))
+            .scaleEffect(scaleInOut ? 1 : 1 / 4)
 
             ZStack {
                 Circle().fill(LinearGradient(gradient: Gradient(colors: [outerColor, innerColor]), startPoint: .top, endPoint: .bottom))
@@ -46,6 +48,8 @@ struct AnimatingCircle: View {
             } //: ZSTACK
             .opacity(0.5)
             .rotationEffect(.degrees(60))
+            .rotationEffect(.degrees(rotateInOut ? 120 : 0))
+            .scaleEffect(scaleInOut ? 1 : 1 / 4)
 
             ZStack {
                 Circle().fill(LinearGradient(gradient: Gradient(colors: [outerColor, innerColor]), startPoint: .top, endPoint: .bottom))
@@ -58,10 +62,11 @@ struct AnimatingCircle: View {
             } //: ZSTACK
             .opacity(0.5)
             .rotationEffect(.degrees(120))
+            .rotationEffect(.degrees(rotateInOut ? 120 : 0))
+            .scaleEffect(scaleInOut ? 1 : 1 / 4)
             
         } //: ZSTACK
-        .rotationEffect(.degrees(rotateInOut ? 120 : 0))
-        .scaleEffect(scaleInOut ? 1 : 1 / 4)
+
         .onAppear {
             withAnimation(.easeInOut(duration: 1).repeatForever(autoreverses: true)) {
                 moveInOut.toggle()
