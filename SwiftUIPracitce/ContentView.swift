@@ -8,17 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
-
-
     var body: some View {
         TabView {
             AnimatingCircle()
                 .tabItem {
-                    HStack {
-                            Image(systemName: "circle.fill")
-                            Text("Animating Circle")
-                        }
+                    VStack {
+                        Image(systemName: "line.3.crossed.swirl.circle.fill")
+                        Text("Animating Circle")
+                    }
+                    .foregroundColor(.black)
                 }
+            RecordPlayer()
+                .tabItem {
+                    Image(systemName: "record.circle.fill")
+                    Text("Record Player")
+                }
+                .foregroundColor(.black)
         }
     }
 }
