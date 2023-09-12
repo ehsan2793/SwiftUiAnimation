@@ -24,6 +24,12 @@ struct ContentView: View {
                     Text("Record Player")
                 }
                 .foregroundColor(.black)
+
+            HueRotation()
+                .tabItem {
+                    Image(systemName: "photo.circle")
+                    Text("Hue Rotation")
+                }
         }
     }
 }
