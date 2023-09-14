@@ -29,6 +29,20 @@ struct ContentView: View {
                 .tabItem {
                     Image(systemName: "photo.circle")
                     Text("Hue Rotation")
+                   
+                }
+            
+            
+            BreathingFlower()
+                .tabItem {
+                   Image(systemName: "tree.circle.fill")
+                    Text("Hue Rotation")
+                }
+            
+            FlyingBird()
+                .tabItem {
+                    Image(systemName: "bird.fill")
+                    Text("Hue Rotation")
                 }
         }
     }
