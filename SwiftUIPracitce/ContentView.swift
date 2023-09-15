@@ -44,6 +44,11 @@ struct ContentView: View {
                     Image(systemName: "bird.fill")
                     Text("Hue Rotation")
                 }
+            DodgeBall()
+                .tabItem {
+                    Image(systemName: "baseball.fill")
+                    Text("Dodge Ball")
+                }
         }
     }
 }
